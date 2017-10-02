@@ -1,0 +1,77 @@
+\documentclass[%
+fontsize=12pt,%           Schriftgröße
+paper=a4,%	      Papier
+DIV=14,%           Seitengröße (siehe Koma Skript Dokumentation !)
+BCOR=5mm,%        Zusätzlicher Rand auf der Innenseite
+pagenumber=footcenter,%
+parskip=half*,%
+naustrian%		      Sprache
+]{scrlttr2}%     Klassen: scrartcl, scrreprt, scrbook, scrletter
+
+\KOMAoptions{%
+	fromalign=left,%
+	fromrule=afteraddress,%
+	fromphone=false,%
+	fromemail=true,%
+	fromurl=false,%
+	foldmarks=false,%
+	backaddress=false,%
+	addrfield=true,%
+	%footsepline=true,
+	%headsepline=true
+	enlargefirstpage=true
+}
+
+%% Schriften ===================================================================================
+%\input{fonts/Fonts}
+
+
+% *** Sprache *****************************
+\usepackage[naustrian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%------------------------------------------
+
+%% Seitenlayout ================================================================================
+%
+\addtokomafont{fromname}{\sffamily}
+\addtokomafont{fromaddress}{\sffamily}
+
+\LoadLetterOption{DIN}
+
+\usepackage{typearea}
+
+% -- Kopfzeilen ---
+\usepackage[automark, nouppercase]{scrpage2}
+\pagestyle{scrplain}
+% ----------------------------------------------------------------------------------------------
+
+\begin{document}
+	%%==============================================================================================
+	\begin{letter}{Test}
+		\setkomavar{fromname}{Jürgen Framework}
+		\setkomavar{fromaddress}{Graben 5 \\ 1010 Wien}
+		\setkomavar{fromphone}{01 123456789}
+		\setkomavar{fromurl}{www.juergen.at}
+		\setkomavar{fromemail}{juergen@outlook.com}
+		
+		\setkomavar{toname}{Hanne Lore}
+		\setkomavar{toaddress}{Landstraße 3 \\ 4020 Linz}
+		
+		\setkomavar{place}{Wien}
+		%\setkomavar{title}{Ein Brief}
+		\setkomavar{subject}{Einfach so}
+		
+		\opening{Sehr geehrter Frau Lore,}
+		
+		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+		
+		Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+		Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut.
+		
+		\closing{Mit freundlichen Grüßen}
+		\setkomavar{signature}{Jürgen Framework}
+		
+	\end{letter}
+	%%==============================================================================================
+\end{document}
